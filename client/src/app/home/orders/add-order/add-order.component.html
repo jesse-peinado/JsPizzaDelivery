@@ -1,0 +1,82 @@
+<div class="add-form">
+    <h1 class="title">Add Order</h1>
+    <form #authForm="ngForm" class="example-form" (ngSubmit)="onSubmit(authForm)" autocomplete="off">
+        <div class="form-group">
+            <mat-form-field class="example-full-width"  appearance="fill" floatLabel="always">
+                <mat-label>Pizza Type: </mat-label>
+                <input type="text" matInput color="primary" [formControl]="pizzaTypeControl">
+                <mat-error *ngIf="pizzaTypeControl.hasError('required') && authForm.submitted">
+                    Pizza Type is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="pizza-size-form">
+                <mat-label>Pizza Size: </mat-label>
+                <div class="panel">
+                  <mat-select [formControl]="pizzaSizeControl" disableOptionCentering="true">
+                    <mat-option class="select-option" *ngFor="let pizzaSize of pizzaSizes" [value]="pizzaSize">{{pizzaSize}}</mat-option>
+                  </mat-select>
+                </div>
+                <mat-error *ngIf="pizzaSizeControl.hasError('required') && authForm.submitted">
+                    Pizza Size is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Price: </mat-label>
+                <span matPrefix style="display: inline-block">$&nbsp;</span>
+                <input matInput class="example-right-align" type="text" placeholder="00.00" [formControl]="priceControl" appTwoDigitDecimal>
+                <mat-error *ngIf="priceControl.hasError('required') && authForm.submitted">
+                    Price is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width"  appearance="fill" floatLabel="always">
+                <mat-label>Delivery Address: </mat-label>
+                <input type="text" matInput color="primary" [formControl]="deliveryAddressControl">
+                <mat-error *ngIf="deliveryAddressControl.hasError('required') && authForm.submitted">
+                    Delivery Address is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Estimated Time: </mat-label>
+                <input matInput class="example-right-align" type="number" placeholder="0" [formControl]="estimatedTimeControl">
+                <span matSuffix style="display: inline-block">min</span>
+                <mat-error *ngIf="estimatedTimeControl.hasError('required') && authForm.submitted">
+                    Estimated Time is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width"  appearance="fill" floatLabel="always">
+                <mat-label>First Name: </mat-label>
+                <input type="text" matInput color="primary" [formControl]="firstNameControl">
+                <mat-error *ngIf="firstNameControl.hasError('required') && authForm.submitted">
+                    First Name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="firstNameControl.hasError('pattern') && !firstNameControl.hasError('required')">
+                    Please enter a valid first name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+                <mat-label>Last Name: </mat-label>
+                <input type="text" matInput [formControl]="lastNameControl">
+                <mat-error *ngIf="lastNameControl.hasError('required') && authForm.submitted">
+                    Last Name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="lastNameControl.hasError('pattern') && !lastNameControl.hasError('required')">
+                    Please enter a valid last name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+                <mat-label>Phone Number: </mat-label>
+                <input type="text" matInput [formControl]="phoneNumberControl" appPhoneNumber>
+                <mat-error *ngIf="phoneNumberControl.hasError('required') && authForm.submitted">
+                    Phone Number is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="phoneNumberControl.hasError('minlength') && !phoneNumberControl.hasError('required')">
+                    Please enter a valid phone number
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="buttons">
+            <button class="cancel" type="button" mat-raised-button (click)="cancel()">Cancel</button>
+            <button class="submit" type="submit" mat-raised-button color="primary" [disabled]="!authForm.valid">Submit</button>
+        </div>
+    </form>
+</div>

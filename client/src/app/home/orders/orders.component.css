@@ -1,0 +1,63 @@
+.btn {
+    margin-left: 1%;
+}
+
+.table {
+    margin-top: 1%;
+    overflow: auto
+}
+
+table {
+    margin-left: 1%;
+}
+
+.mat-column-pizzaType {
+    width: 500px;
+}
+
+.mat-column-pizzaSize {
+    width: 100px;
+}
+
+.mat-column-price {
+    width: 100px;
+}
+
+.mat-column-deliveryAddress {
+    width: 500px;
+}
+
+.mat-column-orderStatus {
+    width: 100px;
+}
+
+.mat-column-estimatedTime {
+    width: 130px;
+}
+
+.mat-column-dateTimeOrdered {
+    width: 200px;
+}
+
+.mat-column-phoneNumber {
+    width: 150px;
+}
+
+.mat-column-employeeName {
+    width: 200px;
+}
+
+.mat-column-tip {
+    width: 100px;
+}
+
+.mat-column-dateTimeDelivered {
+    width: 200px;
+}
+
+.mat-column-actions {
+    width: 80px;
+}
+.order-table .mat-table.mat-table {
+    min-width: 2500px;
+}

@@ -1,0 +1,24 @@
+.table {
+    margin-top: 1%;
+    overflow: auto;
+}
+
+table {
+    margin-left: 1%;
+}
+
+.mat-column-firstName {
+    width: 200px;
+}
+
+.mat-column-lastName {
+    width: 200px;
+}
+
+.mat-column-phoneNumber {
+    width: 100px;
+}
+
+.customer-table .mat-table.mat-table {
+    min-width: 550px;
+}

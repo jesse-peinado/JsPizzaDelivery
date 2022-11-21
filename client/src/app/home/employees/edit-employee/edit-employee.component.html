@@ -1,0 +1,40 @@
+<div class="edit-form">
+    <h1 class="title">Edit Employee</h1>
+    <form #authForm="ngForm" class="example-form" (ngSubmit)="onSubmit(authForm)" autocomplete="off">
+        <div class="form-group">
+            <mat-form-field class="example-full-width"  appearance="fill" floatLabel="always">
+                <mat-label>First Name: </mat-label>
+                <input type="text" matInput color="primary" [formControl]="firstNameControl">
+                <mat-error *ngIf="firstNameControl.hasError('required') && authForm.submitted">
+                    First Name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="firstNameControl.hasError('pattern') && !firstNameControl.hasError('required')">
+                    Please enter a valid first name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+                <mat-label>Last Name: </mat-label>
+                <input type="text" matInput [formControl]="lastNameControl">
+                <mat-error *ngIf="lastNameControl.hasError('required') && authForm.submitted">
+                    Last Name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="lastNameControl.hasError('pattern') && !lastNameControl.hasError('required')">
+                    Please enter a valid last name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Salary</mat-label>
+                <span matPrefix style="display: inline-block">$&nbsp;</span>
+                <input matInput class="example-right-align" type="text" placeholder="00.00" [formControl]="salaryControl" appTwoDigitDecimal>
+                <mat-error *ngIf="salaryControl.hasError('required') && authForm.submitted">
+                    Salary is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-checkbox class="cb-class" color="primary" [(ngModel)]="isCurrentEmployee">Is Current Employee</mat-checkbox>
+        </div>
+        <div class="buttons">
+            <button class="cancel" type="button" mat-raised-button (click)="cancel()">Cancel</button>
+            <button class="submit" type="submit" mat-raised-button color="primary" [disabled]="!authForm.valid">Submit</button>
+        </div>
+    </form>
+</div>

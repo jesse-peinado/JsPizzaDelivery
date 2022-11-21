@@ -1,0 +1,36 @@
+.add-form {
+    margin-left: 1%;
+}
+
+.buttons {
+    margin-top: 5%;
+}
+
+.cancel {
+    background-color: lightgray;
+}
+
+.submit {
+    margin-left: 13%;
+}
+
+.example-right-align {
+    text-align: right;
+    display: inline-block
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+  
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
