@@ -22,6 +22,8 @@
 
         public DateTime? DateTimeDelivered { get; set; }
 
+        public DateTime? DateTimeDelivering { get; set; }
+
         public int? EmployeeId { get; set; }
 
         public string PhoneNumber { get; set; }

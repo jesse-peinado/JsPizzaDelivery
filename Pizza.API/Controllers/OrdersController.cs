@@ -36,8 +36,18 @@ namespace Pizza.API.Controllers
             if (orderDto.PizzaDelivered)
             {
                 orderDto.DateTimeDelivered = DateTime.Now;
+            } else if (orderDto.PizzaDelivering)
+            {
+                orderDto.DateTimeDelivering = DateTime.Now;
             }
             var order = await _orderRepository.GetOrderByIdAsync(id);
+
+            //preserve the delivering date of the order
+            if (order.DateTimeDelivering != null)
+            {
+                orderDto.DateTimeDelivering = order.DateTimeDelivering;
+            }
+
             if (await _orderRepository.UpdateOrder(orderDto, order))
             {
                 return NoContent();

@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AddOrderComponent } from './home/orders/add-order/add-order.component';
 import { EditOrderComponent } from './home/orders/edit-order/edit-order.component';
 import { OrdersComponent } from './home/orders/orders.component';
+import { ReportingComponent } from './home/reporting/reporting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: ':id', component: EditOrderComponent },
     ]
   },
+  { path: 'reporting', component: ReportingComponent},
   
 ]
 

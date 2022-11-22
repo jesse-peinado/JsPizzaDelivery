@@ -1,0 +1,41 @@
+.table {
+    margin-top: 1%;
+    overflow: auto
+}
+
+.mat-column-id {
+    width: 100px;
+}
+
+.mat-column-employeeName {
+    width: 150px;
+}
+
+.mat-column-orderId {
+    width: 100px;
+}
+
+.mat-column-price {
+    width: 100px;
+}
+
+.mat-column-tip {
+    width: 100px;
+}
+
+
+.mat-column-completionTime {
+    width: 100px;
+}
+
+.mat-column-estimatedTime {
+    width: 100px;
+}
+
+.mat-column-differenceBetweenCompletionAndEstimated {
+    width: 300px;
+}
+
+.order-table .mat-table.mat-table {
+    min-width: 1000px;
+}

@@ -24,6 +24,8 @@ namespace Pizza.API.Entities
 
         public DateTime? DateTimeDelivered{ get; set; }
 
+        public DateTime? DateTimeDelivering { get; set; }
+
         public Employee? Employee { get; set; }
 
         [ForeignKey("Employee")]

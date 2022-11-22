@@ -1,0 +1,20 @@
+.table {
+    margin-top: 1%;
+    overflow: auto
+}
+
+.mat-column-revenue {
+    width: 200px;
+}
+
+.mat-column-employeeCompensation {
+    width: 200px;
+}
+
+.mat-column-profit {
+    width: 200px;
+}
+
+.revenue-table .mat-table.mat-table {
+    min-width: 600px;
+}

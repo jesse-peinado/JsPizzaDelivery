@@ -26,6 +26,7 @@ export class AddOrderComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (form.valid && this.pizzaTypeControl.valid && this.pizzaSizeControl.valid && this.priceControl.valid && this.deliveryAddressControl.valid && this.estimatedTimeControl.valid && this.firstNameControl.valid && this.lastNameControl.valid && this.phoneNumberControl.valid) {
+      //Used to handle typing an extra digit in the phone number field
       if (this.phoneNumberControl.value.length === 15) {
         if (this.phoneNumberControl.value.indexOf('\t') >= 0) {
           let newPhoneNumber = this.phoneNumberControl.value;

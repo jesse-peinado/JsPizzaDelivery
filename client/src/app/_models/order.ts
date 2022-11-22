@@ -10,6 +10,7 @@ export class Order {
     lastName: string;
     estimatedTime: number;
     dateTimeDelivered?: string;
+    dateTimeDelivering?: string;
     dateTimeOrdered: string;
 
     employeeId?: number;

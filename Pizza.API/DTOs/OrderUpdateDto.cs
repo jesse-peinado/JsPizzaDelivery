@@ -11,6 +11,10 @@
 
         public bool PizzaDelivered { get; set; }
 
+        public bool PizzaDelivering { get; set; }
+
         public DateTime? DateTimeDelivered { get; set; }
+
+        public DateTime? DateTimeDelivering { get; set; }
     }
 }

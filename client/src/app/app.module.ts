@@ -17,6 +17,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { EditEmployeeComponent } from './home/employees/edit-employee/edit-employee.component';
 import { CustomersComponent } from './home/customers/customers.component';
 import { OrdersComponent } from './home/orders/orders.component';
@@ -24,6 +26,11 @@ import { AddOrderComponent } from './home/orders/add-order/add-order.component';
 import { TwoDigitDecimalDirective } from './_directives/two-digit-decimal.directive';
 import { PhoneNumberDirective } from './_directives/phone-number.directive';
 import { EditOrderComponent } from './home/orders/edit-order/edit-order.component';
+import { ReportingComponent } from './home/reporting/reporting.component';
+import { EmployeeCompensationComponent } from './home/reporting/employee-compensation/employee-compensation.component';
+import { EmployeeOrdersComponent } from './home/reporting/employee-orders/employee-orders.component';
+import { RevenueComponent } from './home/reporting/revenue/revenue.component';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,11 @@ import { EditOrderComponent } from './home/orders/edit-order/edit-order.componen
     AddOrderComponent,
     TwoDigitDecimalDirective,
     PhoneNumberDirective,
-    EditOrderComponent
+    EditOrderComponent,
+    ReportingComponent,
+    EmployeeCompensationComponent,
+    EmployeeOrdersComponent,
+    RevenueComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,10 @@ import { EditOrderComponent } from './home/orders/edit-order/edit-order.componen
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableExporterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

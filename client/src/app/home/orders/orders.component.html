@@ -57,6 +57,11 @@
                 <td mat-cell *matCellDef="let element"> {{element.tip | number:'1.2-2'}} </td>
             </ng-container>
 
+            <ng-container matColumnDef="dateTimeDelivering">
+                <th mat-header-cell *matHeaderCellDef> Order Delivering </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateTimeDelivering}} </td>
+            </ng-container>
+
             <ng-container matColumnDef="dateTimeDelivered">
                 <th mat-header-cell *matHeaderCellDef> Order Delivered </th>
                 <td mat-cell *matCellDef="let element"> {{element.dateTimeDelivered}} </td>

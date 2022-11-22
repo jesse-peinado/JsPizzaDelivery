@@ -55,6 +55,10 @@ table {
     width: 200px;
 }
 
+.mat-column-dateTimeDelivering {
+    width: 200px;
+}
+
 .mat-column-actions {
     width: 80px;
 }

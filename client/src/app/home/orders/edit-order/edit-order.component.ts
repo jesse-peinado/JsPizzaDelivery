@@ -64,7 +64,8 @@ export class EditOrderComponent implements OnInit {
 
   loadEmployees(order: Order) {
     this.employeeService.getEmployees().subscribe(employees => {
-      this.employees = employees;
+      //Filter out employees that are disabled
+      this.employees = employees.filter(x=> x.isCurrentEmployee);
       if (this.orderStatusControl.value === 'Delivering' || this.orderStatusControl.value === 'Delivered') {
         this.loadEmployee(order.employeeId)
       }
@@ -129,11 +130,14 @@ export class EditOrderComponent implements OnInit {
     if (form.valid && this.orderStatusControl.valid && (this.employeeControl.valid || this.employeeControl.disabled) && (this.tipControl.valid || this.tipControl.disabled)) {
       let orderUpdate: OrderUpdate;
       if (this.orderStatusControl.value === 'Delivered') {
-        orderUpdate = new OrderUpdate(this.orderStatusControl.value, true, Number(this.employeeControl.value), Number(this.tipControl.value));
+        //if order status is delivered we will make an order update with the tip, employee and passing true for pizza delivered and false for delivering
+        orderUpdate = new OrderUpdate(this.orderStatusControl.value, true, false, Number(this.employeeControl.value), Number(this.tipControl.value));
       } else if (this.orderStatusControl.value === 'Delivering') {
-        orderUpdate = new OrderUpdate(this.orderStatusControl.value, false, Number(this.employeeControl.value));
+        //if order status is delivering we will make an order update with the employee and passing true for pizza delivering and false for delivered
+        orderUpdate = new OrderUpdate(this.orderStatusControl.value, false, true, Number(this.employeeControl.value));
       } else {
-        orderUpdate = new OrderUpdate(this.orderStatusControl.value, false);
+        //Everything else will just be passing true for pizza delivered and false for delivering
+        orderUpdate = new OrderUpdate(this.orderStatusControl.value, false, false);
       }
       this.orderService.editOrder(Number(this.route.snapshot.paramMap.get('id')), orderUpdate).subscribe({
         next: (order) => {

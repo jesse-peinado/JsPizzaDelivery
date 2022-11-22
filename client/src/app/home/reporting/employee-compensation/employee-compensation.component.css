@@ -1,0 +1,36 @@
+.table {
+    overflow: auto
+}
+
+.mat-column-id {
+    width: 100px;
+}
+
+.mat-column-employeeName {
+    width: 150px;
+}
+
+.mat-column-hoursWorked {
+    width: 100px;
+}
+
+.mat-column-totalSalaryPaid {
+    width: 100px;
+}
+
+
+.mat-column-totalTip {
+    width: 100px;
+}
+
+.mat-column-totalPaid {
+    width: 80px;
+}
+
+.mat-column-orderCount {
+    width: 80px;
+}
+
+.order-table .mat-table.mat-table {
+    min-width: 1000px;
+}

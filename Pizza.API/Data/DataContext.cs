@@ -12,5 +12,7 @@ namespace Pizza.API.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        //public DbSet<EmployeeCompensationReport> EmployeeCompensationReport { get; set; }
+        //public DbSet<EmployeeOrderReport> EmployeeOrderReport { get; set; }
     }
 }

@@ -30,6 +30,7 @@ namespace Pizza.API.Data
                     Tip = o.Tip,
                     EstimatedTime = o.EstimatedTime,
                     DateTimeDelivered = o.DateTimeDelivered,
+                    DateTimeDelivering = o.DateTimeDelivering,
                     DateTimeOrdered = o.DateTimeOrdered,
                     EmployeeId = o.EmployeeId,
                     PhoneNumber = o.PhoneNumber,

@@ -9,7 +9,7 @@ import { OrderService } from 'src/app/_services/order.service';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  displayedColumnsSearch: string[] = ['id', 'actions', 'pizzaType', 'pizzaSize', 'price', 'deliveryAddress', 'orderStatus', 'estimatedTime', 'dateTimeOrdered', 'phoneNumber', 'employeeName', 'tip', 'dateTimeDelivered'];
+  displayedColumnsSearch: string[] = ['id', 'actions', 'pizzaType', 'pizzaSize', 'price', 'deliveryAddress', 'orderStatus', 'estimatedTime', 'dateTimeOrdered', 'phoneNumber', 'employeeName', 'tip', 'dateTimeDelivering', 'dateTimeDelivered'];
   orderList: Order[] = [];
 
   constructor(private orderService: OrderService, private router: Router, private route: ActivatedRoute) { }
@@ -18,10 +18,16 @@ export class OrdersComponent implements OnInit {
     this.orderService.getOrders().subscribe(result => {
       result.forEach(order => {
         order.dateTimeOrdered = new Date(order.dateTimeOrdered).toLocaleString();
-        if (order.dateTimeDelivered === '0001-01-01T00:00:00' || order.dateTimeDelivered === null) {
+        if (order.dateTimeDelivered === null) {
           order.dateTimeDelivered = '';
         } else {
           order.dateTimeDelivered = new Date(order.dateTimeDelivered).toLocaleString();
+        }
+
+        if (order.dateTimeDelivering === null) {
+          order.dateTimeDelivering = ''
+        } else {
+          order.dateTimeDelivering = new Date(order.dateTimeDelivering).toLocaleString();
         }
       })
       this.orderList = result;

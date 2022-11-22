@@ -1,0 +1,24 @@
+<div style="margin-left: 1%;">
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a Start date</mat-label>
+      <!-- #docregion toggle -->
+        <input matInput [matDatepicker]="picker" [(ngModel)]="start">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker ></mat-datepicker>
+      <!-- #enddocregion toggle -->
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="margin-left: 2%;">
+        <mat-label>Choose an End date</mat-label>
+      <!-- #docregion toggle -->
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="end">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 ></mat-datepicker>
+      <!-- #enddocregion toggle -->
+      </mat-form-field>
+      <button class="btn" mat-raised-button color="primary" (click)="filter()">Apply Filters</button>
+    <app-employee-compensation></app-employee-compensation>
+    <app-employee-orders></app-employee-orders>
+    <app-revenue></app-revenue>
+</div>
