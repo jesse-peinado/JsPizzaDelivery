@@ -64,3 +64,5 @@ Total Tip is added to the total salary paid to get the total paid the employee g
 Employee Orders Report allows you to see the price, tip, employee, completion time, estimated time and the difference between completion and estimated time. If the difference is negative, then the background of that row and column will turn red. If it is positive, it will be green. 
 
 Revenue Report allows you to see the revenue, employee compensation and profit of the restaurant. If profit is negative, the background color of row and column will be red. If it is positive, it will be green. 
+
+Each report has a download button, to download each of them to excel. 
