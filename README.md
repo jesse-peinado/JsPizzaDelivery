@@ -14,6 +14,8 @@ You can now Run Pizza.API to start the backend
 
 Before starting the client dev server, run "npm install" to get the latest libraries needed for client to run.
 
+Client side is developed using Angular 14. 
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Home
