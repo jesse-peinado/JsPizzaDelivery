@@ -26,9 +26,7 @@ You can also see, add, and edit Orders with the Orders Button. Lastly, you can s
 
 To add an employee, click Add Employee. First and Last Name, and Salary are required. 
 
-To edit an employee, click the pencil icon next to the first name of the employee. You can also disable employees by editing an employee and unchecking is current employee. Disabled employees will be grayed out but 
-
-can still be edited. Disabled employees will no longer be selected for delivering Orders.
+To edit an employee, click the pencil icon next to the first name of the employee. You can also disable employees by editing an employee and unchecking is current employee. Disabled employees will be grayed out but can still be edited. Disabled employees will no longer be selected for delivering Orders.
 
 ## Customers
 
